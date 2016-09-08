@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>Car-o-Rama!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>We Sell (Used) Cars!</h1>
+        </div>
+        <h2>Find Your Next (Used) Car!</h2>
+        <form action='/search' method='post'>
+            <div class='form-group'>
+                <label for='price'>Enter Maximum Price:</label>
+                <input id='price' name='price' class='form-control' type='number'>
+            </div>
+            <div class='form-group'>
+                <label for='miles'>Enter Maximum Miles:</label>
+                <input id='miles' name='miles' class='form-control' type='number'>
+            </div>
+            <button type='submit' class='btn btn-success'>Search</button>
+        </form>
+        <form action='/new_car' method='post'>
+            <button type='submit' class='btn btn-danger'>Add car</button>
+        </form>
+        <h2>Our Inventory!</h2>
+           <ul class='list-group'>
+               {% for car in inventory %}
+               <br>
+                   <li class='list-group-item'>{{ car.getCarDetail(1) }}</li>
+                        <ul>
+                            <li>${{ car.getCarDetail(2) }}</li>
+                            <li>{{ car.getCarDetail(3) }} miles</li>
+                            <li><img src="{{ car.getCarDetail(4) }}"></li>
+                        </ul>
+               {% endfor %}
+           </ul>
+
+    </div>
+</body>
+</html>

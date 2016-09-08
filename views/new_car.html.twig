@@ -1,0 +1,32 @@
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>Car-o-Rama!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>We Sell (Used) Cars!</h1>
+        </div>
+        <h2>Sell A (Used) Car!</h2>
+        <form action='/update_inventory' method='post'>
+            <div class='form-group'>
+                <label for='make_model'>Make and Model:</label>
+                <input id='make_model' name='make_model' class='form-control' type='text'>
+            </div>
+            <div class='form-group'>
+                <label for='selling_price'>Enter Selling Price:</label>
+                <input id='selling_price' name='selling_price' class='form-control' type='number'>
+            </div>
+            <div class='form-group'>
+                <label for='selling_miles'>Enter Miles:</label>
+                <input id='selling_miles' name='selling_miles' class='form-control' type='number'>
+            </div>
+            <button type='submit' class='btn btn-danger'>Add car</button>
+        </form>
+        <form action="/" method="get">
+            <button type="submit" class="btn btn-default">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>
